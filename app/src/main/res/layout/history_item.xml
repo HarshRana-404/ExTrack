@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp"
+    app:cardUseCompatPadding="true"
+    app:cardBackgroundColor="@color/off_bg"
+    android:clickable="true"
+    android:background="@color/off_bg">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:foreground="?attr/selectableItemBackgroundBorderless">
+
+        <TextView
+            android:id="@+id/tv_history_exp_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Expense name"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/dongle_light"
+            android:textColor="@color/fg"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="8dp"
+            />
+        <ImageView
+            android:id="@+id/iv_history_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_receive"
+            app:tint="@color/fg"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/tv_history_exp_name"
+            />
+        <TextView
+            android:id="@+id/tv_history_exp_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₹ Amount"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@color/fg"
+            android:fontFamily="@font/dongle_light"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="8dp"
+            />
+        <TextView
+            android:id="@+id/tv_history_exp_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Expense Date"
+            android:textSize="22sp"
+            android:fontFamily="@font/dongle_light"
+            android:textStyle="normal"
+            android:textColor="@color/fg"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/tv_history_exp_amount"
+            />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

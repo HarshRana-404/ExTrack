@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HistoryActivity"
+    android:padding="8dp"
+    android:background="@color/bg"
+    android:orientation="vertical"
+    android:weightSum="10"
+    android:gravity="center_horizontal">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ImageButton
+            android:id="@+id/ib_history_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_back"
+            android:background="@color/bg"
+            android:padding="16dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            />
+
+        <TextView
+            android:id="@+id/tv_history_contact_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/fg"
+            android:textSize="36sp"
+            android:layout_toRightOf="@id/ib_history_back"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="4dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_history_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/fg"
+            android:textSize="36sp"
+            android:layout_weight="1"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="8dp"
+            />
+
+    </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_history"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:weightSum="2"
+        android:gravity="center_vertical">
+
+        <Button
+            android:id="@+id/btn_history_receive"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_bg"
+            app:backgroundTint="@color/fg"
+            android:text="Receive"
+            android:drawableLeft="@drawable/ic_receive"
+            android:drawableTint="@color/bg"
+            android:textColor="@color/bg"
+            android:textSize="26sp"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="4dp"
+            />
+        <Button
+            android:id="@+id/btn_history_expend"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_bg"
+            app:backgroundTint="@color/fg"
+            android:text="Expend"
+            android:drawableLeft="@drawable/ic_collect"
+            android:drawableTint="@color/bg"
+            android:textColor="@color/bg"
+            android:textSize="26sp"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="4dp"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

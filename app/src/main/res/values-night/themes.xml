@@ -1,0 +1,23 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.ExTrack" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="fontFamily">@font/dongle_regular</item>
+        <item name="android:statusBarColor">@color/bg</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:navigationBarColor">@color/off_bg</item>
+        <item name="colorSecondaryContainer">@color/nav_bg</item>
+        <item name="colorOnSecondaryContainer">@color/bg</item>
+    </style>
+    <style name="myBottomNav">
+        <item name="itemTextAppearanceActive">@style/TextAppearance.BottomNavigationView.Active</item>
+        <item name="itemTextAppearanceInactive">@style/TextAppearance.BottomNavigationView.Inactive</item>
+    </style>
+    <style name="TextAppearance"/>
+    <style name="TextAppearance.BottomNavigationView"/>
+    <style name="TextAppearance.BottomNavigationView.Inactive">
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="TextAppearance.BottomNavigationView.Active">
+        <item name="android:textSize">22sp</item>
+    </style>
+</resources>

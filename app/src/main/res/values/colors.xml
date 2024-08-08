@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="bg">#F6F6F6</color>
+    <color name="off_bg">#EDEDED</color>
+    <color name="fg">#1D1D1D</color>
+    <color name="off_fg">#2d2d2d</color>
+    <color name="red">#FF5151</color>
+    <color name="green">#13BF00</color>
+
+    <color name="nav_bg">#991D1D1D</color>
+
+</resources>

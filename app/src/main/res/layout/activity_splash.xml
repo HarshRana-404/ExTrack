@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashActivity"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/bg">
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/extrackicanim"
+        android:background="@drawable/splash_iv_bg"
+        android:elevation="16dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/tv_splash_expense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/off_fg"
+            android:text="Expense"
+            android:textColor="@color/fg"
+            android:textSize="48sp"
+            android:foreground="?attr/selectableItemBackground"
+            android:layout_marginHorizontal="2dp"
+            />
+        <TextView
+            android:id="@+id/tv_splash_track"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/off_fg"
+            android:text="Tracker"
+            android:textColor="@color/fg"
+            android:textSize="48sp"
+            android:foreground="?attr/selectableItemBackground"
+            android:layout_marginHorizontal="2dp"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp"
+    app:cardUseCompatPadding="true"
+    app:cardBackgroundColor="@color/off_bg"
+    android:clickable="true"
+    android:id="@+id/cv_contact">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="2dp"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:gravity="center_vertical"
+        >
+
+        <TextView
+            android:id="@+id/tv_expense_contact_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact name"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/fg"
+            android:layout_marginHorizontal="4dp"
+            />
+        <ImageButton
+            android:id="@+id/ib_expense_contact_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close"
+            android:background="@color/off_bg"
+            android:padding="16dp"
+            android:layout_alignParentRight="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:layout_marginHorizontal="2dp"
+            />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

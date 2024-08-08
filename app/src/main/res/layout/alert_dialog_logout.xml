@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/bg"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/off_fg"
+            android:text="Logout?"
+            android:textColor="@color/fg"
+            android:textSize="36sp"
+            android:fontFamily="@font/dongle_bold"
+            android:layout_alignParentLeft="true"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/off_fg"
+            android:text="Are you sure you want to logout?"
+            android:textColor="@color/fg"
+            android:textSize="28sp"
+            android:fontFamily="@font/dongle_bold"
+            android:layout_alignParentLeft="true"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:weightSum="2"
+        android:gravity="center_vertical"
+        android:layout_marginVertical="16dp">
+
+        <Button
+            android:id="@+id/btn_ad_logout_no"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_bg"
+            app:backgroundTint="@color/fg"
+            android:text="No"
+            android:textColor="@color/bg"
+            android:textSize="26sp"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="4dp"
+            />
+        <Button
+            android:id="@+id/btn_ad_logout_yes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_bg"
+            app:backgroundTint="@color/fg"
+            android:text="Yes"
+            android:textColor="@color/bg"
+            android:textSize="26sp"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="4dp"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
