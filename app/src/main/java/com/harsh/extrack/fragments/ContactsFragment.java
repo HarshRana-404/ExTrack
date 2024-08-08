@@ -99,20 +99,24 @@ public class ContactsFragment extends Fragment {
                         public void onClick(View v) {
                             contactName = etContactName.getText().toString().trim();
                             if(!contactName.isEmpty()){
-                                if(!contactExists()){
-                                    HashMap<String, String> hmContact = new HashMap<>();
-                                    hmContact.put("name", contactName);
-                                    hmContact.put("balance", "0.");
-                                    Constants.fbStore.collection("users").document(Constants.uID).collection("contacts").document().set(hmContact).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void unused) {
-                                            Toast.makeText(requireContext(), "Person added successfully!", Toast.LENGTH_SHORT).show();
-                                            getContacts();
-                                            bsAddContact.dismiss();
-                                        }
-                                    });
+                                if(!contactName.equalsIgnoreCase("Self")){
+                                    if(!contactExists()){
+                                        HashMap<String, String> hmContact = new HashMap<>();
+                                        hmContact.put("name", contactName);
+                                        hmContact.put("balance", "0.");
+                                        Constants.fbStore.collection("users").document(Constants.uID).collection("contacts").document().set(hmContact).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void unused) {
+                                                Toast.makeText(requireContext(), "Person added successfully!", Toast.LENGTH_SHORT).show();
+                                                getContacts();
+                                                bsAddContact.dismiss();
+                                            }
+                                        });
+                                    }else{
+                                        Toast.makeText(requireContext(), "Person with this name already exists!", Toast.LENGTH_SHORT).show();
+                                    }
                                 }else{
-                                    Toast.makeText(requireContext(), "Person with this name already exists!", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(requireContext(), "You cannot add 'Self' as a contact!", Toast.LENGTH_SHORT).show();
                                 }
                             }else{
                                 Toast.makeText(requireContext(), "Enter person name!", Toast.LENGTH_SHORT).show();
