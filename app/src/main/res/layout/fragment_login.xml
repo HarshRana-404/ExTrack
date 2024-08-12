@@ -10,6 +10,15 @@
     android:gravity="center"
     android:padding="16dp">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/fg"
+        android:textSize="48sp"
+        android:text="Login"
+        android:textStyle="bold"
+        />
+
     <EditText
         android:id="@+id/et_email"
         android:layout_width="match_parent"

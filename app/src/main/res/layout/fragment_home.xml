@@ -8,10 +8,20 @@
     android:padding="8dp"
     android:background="@color/bg">
 
+    <TextView
+        android:id="@+id/tv_home_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/fg"
+        android:textSize="36sp"
+        android:layout_marginLeft="4dp"
+        />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_expenses"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_below="@id/tv_home_title"/>
 
     <TextView
         android:id="@+id/tv_no_expenses"
@@ -23,7 +33,6 @@
         android:textAlignment="center"
         android:textSize="36sp"
         android:fontFamily="@font/dongle_bold"
-        android:layout_alignParentLeft="true"
         android:layout_centerInParent="true"
         android:visibility="gone"
         />

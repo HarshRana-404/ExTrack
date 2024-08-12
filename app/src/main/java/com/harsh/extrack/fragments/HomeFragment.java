@@ -46,7 +46,7 @@ import java.util.Locale;
 public class HomeFragment extends Fragment {
 
     RecyclerView rvExpenses, rvExpenseContacts;
-    TextView tvNoExpenses;
+    TextView tvNoExpenses, tvHomeTitle;
     ExpenseAdapter adapterExpense;
     ExpenseContactsAdapter adapterExpenseContacts;
     ArrayList<ExpenseModel> alExpenses = new ArrayList<>();
@@ -77,6 +77,7 @@ public class HomeFragment extends Fragment {
         try{
             rvExpenses = fragHome.findViewById(R.id.rv_expenses);
             tvNoExpenses = fragHome.findViewById(R.id.tv_no_expenses);
+            tvHomeTitle = fragHome.findViewById(R.id.tv_home_title);
             fabAddExpense = fragHome.findViewById(R.id.fab_add_expense);
             rvExpenses.setLayoutManager(new LinearLayoutManager(requireContext()));
             adapterExpense = new ExpenseAdapter(requireContext(), alExpenses);
@@ -242,6 +243,7 @@ public class HomeFragment extends Fragment {
             alExpenses.clear();
             Task<QuerySnapshot> qs = Constants.fbStore.collection("users").document(Constants.uID).collection("expenses").whereEqualTo("type", "expend").get();
             qs.addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                @SuppressLint("SetTextI18n")
                 @Override
                 public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                     List<DocumentSnapshot> expenses = queryDocumentSnapshots.getDocuments();
@@ -251,6 +253,7 @@ public class HomeFragment extends Fragment {
                     if(alExpenses.isEmpty()){
                         tvNoExpenses.setVisibility(View.VISIBLE);
                     }else{
+                        tvHomeTitle.setText("Expenses:");
                         tvNoExpenses.setVisibility(View.GONE);
                         alExpenses.sort(Comparator.comparing(ExpenseModel::getDate).reversed());
                         adapterExpense.notifyDataSetChanged();

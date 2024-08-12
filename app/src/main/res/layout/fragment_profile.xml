@@ -7,7 +7,8 @@
     tools:context=".fragments.ProfileFragment"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="8dp">
+    android:padding="16dp"
+    android:background="@color/bg">
 
     <TextView
         android:id="@+id/tv_profile_name"
@@ -30,6 +31,7 @@
         android:drawablePadding="32dp"
         android:background="@drawable/btn_bg"
         android:backgroundTint="@color/off_bg"
+        android:elevation="2dp"
         />
     <TextView
         android:id="@+id/tv_profile_self_expend"
@@ -43,6 +45,7 @@
         android:drawablePadding="32dp"
         android:background="@drawable/btn_bg"
         android:backgroundTint="@color/off_bg"
+        android:elevation="2dp"
         />
     <TextView
         android:id="@+id/tv_profile_contacts_count"
@@ -56,6 +59,7 @@
         android:drawablePadding="32dp"
         android:background="@drawable/btn_bg"
         android:backgroundTint="@color/off_bg"
+        android:elevation="2dp"
         />
     <Button
         android:id="@+id/btn_profile_change_password"

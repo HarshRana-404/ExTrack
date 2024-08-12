@@ -43,7 +43,8 @@ public class ContactsFragment extends Fragment {
     Button btnAddContact;
     ImageButton ibClose;
     String contactName="";
-    TextView tvNoContacts;
+    TextView tvNoContacts, tvPay, tvReceive;
+    Double pay=0., receive=0.;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -58,6 +59,8 @@ public class ContactsFragment extends Fragment {
         try{
             rvContacts = fragContacts.findViewById(R.id.rv_contacts);
             tvNoContacts = fragContacts.findViewById(R.id.tv_no_contacts);
+            tvPay = fragContacts.findViewById(R.id.tv_contacts_pay);
+            tvReceive = fragContacts.findViewById(R.id.tv_contacts_receive);
             rvContacts.setLayoutManager(new LinearLayoutManager(requireContext()));
             adapterContact = new ContactAdapter(requireContext(), alContacts);
             rvContacts.setAdapter(adapterContact);
@@ -148,12 +151,20 @@ public class ContactsFragment extends Fragment {
         alContacts.clear();
         Task<QuerySnapshot> qs = Constants.fbStore.collection("users").document(Constants.uID).collection("contacts").get();
         qs.addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                 List<DocumentSnapshot> contacts = queryDocumentSnapshots.getDocuments();
                 for(DocumentSnapshot contact : contacts){
                     alContacts.add(new ContactModel(contact.getString("name"), Double.parseDouble(contact.getString("balance"))));
+                    if(Double.parseDouble(contact.getString("balance"))>=0){
+                        receive += Double.parseDouble(contact.getString("balance"));
+                    }else{
+                        pay += Double.parseDouble(contact.getString("balance"));
+                    }
                 }
+                tvReceive.setText("Receive: ₹ "+receive);
+                tvPay.setText("Pay: ₹ "+Math.abs(pay));
                 if(alContacts.isEmpty()){
                     tvNoContacts.setVisibility(View.VISIBLE);
                 }else{

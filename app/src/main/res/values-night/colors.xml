@@ -3,8 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="bg">#1d1d1d</color>
-    <color name="off_bg">#2d2d2d</color>
+    <color name="bg">#101010</color>
+    <color name="off_bg">#1F1F1F</color>
     <color name="fg">#F6F6F6</color>
     <color name="off_fg">#D5D5D5</color>
     <color name="red">#FF5151</color>
